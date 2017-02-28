@@ -128,7 +128,7 @@ int main() {
     int height = 0;
     cout << "How many squares wide is your grid? ";
     cin >> width;
-    cout << "How many squares long is your grid? ";
+    cout << "How many squares tall is your grid? ";
     cin >> height;
     
     domain grid;
@@ -136,7 +136,7 @@ int main() {
     cout << grid.xmax << "x" << grid.ymax << " grid" << endl;
     agent Z;
     Z.init_agent(&width , &height);
-    while((Z.agentx != grid.goalx) && (Z.agenty != grid.goaly)){
+    while((Z.agentx == grid.goalx) && (Z.agenty == grid.goaly)){
         Z.init_agent(&width , &height);
     };
     
@@ -217,10 +217,11 @@ int main() {
     cout << "\n";
     
     // Agent finds the goal all by himself
-    
-    cout << "Now watch the agent solve it by himself." << endl;
+    string go;
+    cout << "Now watch the agent solve it by himself. Type 'go' when you are ready.  ";
+    cin >> go;
     Z.init_agent(&width , &height);
-    while((Z.agentx != grid.goalx) && (Z.agenty != grid.goaly)){
+    while((Z.agentx == grid.goalx) && (Z.agenty == grid.goaly)){
         Z.init_agent(&width , &height);
     };
     
